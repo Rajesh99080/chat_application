@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /*background-color: lightblue;*/
+}
+.box-container{
+    display: flex;
+    width:500px;
+    height: 80vh;
+    margin: 70px 70px;
+    margin-left: 330px;
+}
+.logo{
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;   
+}
+.loginpage{
+    margin-left: 80px;
+}
+.head{
+    text-align: center;
+}
+.submit{
+    width:70px;
+    height:20px;
+    cursor: pointer;
+
+}
+.for{
+    text-align: center;
+}
+.clear{
+    width:70px;
+    height:20px;
+    cursor: pointer;
+}
+
