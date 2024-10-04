@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        
+    }
+    body{
+        /* background-color: darksalmon; */
+    }
+    /* .wrapper{
+        display: flex;
+        position:relative;
+    } */
+    .wrapper .sidebar{
+        position: fixed;
+        width:14%;
+        height: 100%;
+        background-color: whitesmoke ;
+        padding:30px 0px;
+    }
+    /*.wrapper .sidebar h2{
+        color:cadetblue;
+        text-transform: uppercase;
+        text-align: left;
+        margin-bottom: 20px;
+    }*/
+    .wrapper .sidebar ul li{
+        padding: 15px;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+    }
+    .wrapper .sidebar ul li a{
+        color:black;
+        display: block;
+    }
+      .wrapper .sidebar ul li a .fas{  
+        width:25px;
+     }  
+     .wrapper .sidebar ul li:hover{
+        background-color:lightblue;
+     }
+     .wrapper .sidebar ul li:hover a{
+        color:palevioletred;
+     }
+      .wrapper .main_content{
+        position: fixed;
+        left: 130px;
+        margin-left: 20px;
+        width:20%;
+        height: 100%;
+        background-color: floralwhite;
+        text-align: center;
+     }
+     /*.wrapper .main_content .header{
+        padding: 20px;
+        color: black;
+     }
+     .wrapper .main_content .para{
+        margin: 20px;
+        text-align: center;
+     }*/
+    .wrapper .main_content .icon{
+        padding: 5px 5px;
+        text-align: center;
+    }
+    .wrapper .main_content .icon1{
+        position: absolute;
+        left:123px;
+        bottom:5px;
+    }
+    .wrapper .main_content .head{
+        text-align: left;
+        
+    }
+    .main_content .icon{
+        text-align: left;
+    }
+    .btn{
+       margin:5px 5px;
+       width:120px;
+       border-radius: 5px;
+       height: 30px;
+       background-color: white;
+    }
+    .wrapper .text{
+        position:absolute;
+        left:700px;
+        bottom: 20px;
+        border-radius: 30px;
+        
+        
+    }
+    .text input{
+        width: 380px;
+        height: 33px;
+        padding: 5px;
+        border-radius: 3px;
+        border: none;
+        margin-left: 20px;
+        text-align:center;
+        background-color:grey;
+        color: white;
+    }
+    .text .icon2{
+        font-size: 40px;
+        margin: 5px 15px;
+        position: absolute;
+        left:-100px;
+margin-top: -3px;    
+    }
+</style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="sidebar">
+        <ul>
+            <li><a href="#"><i class="fa-regular fa-message"></i>&nbsp;&nbsp;chats</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i>settings</a></li>
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
+        </ul>
+    </div>
+    <div class="main_content">
+       <!--- <div class="header">welcome to my world</div>
+        <div class="para">
+        <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat sapiente architecto iste quo repellendus veniam saepe,<br> repellat officiis rem debitis labore molestiae? Quo, non. At mollitia est similique autem eaque!
+        </div>-->
+         <h2 class="head">CHATS</h2><br>
+        <input class="icon" type="text" placeholder="search"><br><br> 
+        <button class="btn">CHAITU</button><br>
+        <button class="btn">DEVA</button><br>
+        <button class="btn">JAY</button><br>
+    </div>
+    <div class="text">
+        <div class="icon2">
+        <i class="fa-regular fa-heart"></i></div>
+       <input class="Text"  type="text" placeholder="typing">
+    </div>
+  </div>  
+</body>
+</html> 
