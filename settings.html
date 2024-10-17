@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  /*.wrapper .sidebar{
+        position: fixed;
+        width:14%;
+        height: 100%;
+        background-color: whitesmoke ;
+        padding:30px 0px;
+    }
+    .wrapper .sidebar ul li{
+        padding: 15px;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+    }
+    .wrapper .sidebar ul li a{
+        color:black;
+        display: block;
+    }
+      .wrapper .sidebar ul li a .fas{  
+        width:25px;
+     }  
+     .wrapper .sidebar ul li:hover{
+        background-color:lightblue;
+     }
+     .wrapper .sidebar ul li:hover a{
+        color:palevioletred;
+     }*/
+     .wrapper {
+      margin-top:-21px ;
+      position:absolute;
+      left:115px;  
+      width:26%; 
+      height: 100%; 
+      background-color: goldenrod;
+      text-align: center;
+     }
+     .wrapper .btn3{
+      width:120px;
+      margin:10px;
+      height:30px;
+      /* margin-top: 30px; */
+      text-align: center;
+     }
+    
+     .wrapper .btn2{
+     width:120px;
+      margin:10px;
+      height:30px;
+      text-align: center;
+     }
+     .wrapper .btn1{
+     width:120px;
+      margin:10px;
+      height:30px;
+      text-align: center;
+      margin-top: 20px;
+     }
+</style>
+</head>
+<body>
+    <div class="wrapper">
+      <!--<div class="sidebar">
+        <ul>
+            <li><a href="#"><i class="fa-regular fa-message"></i>&nbsp;&nbsp;chats</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i>settings</a></li>
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i>logout</a></li>
+        </ul>
+      </div>
+      <div class="settings">
+       <a href="profile.html"><button class="btn2" type="button">Profile</button></a><br>
+       <a href="information.html"> <button class="btn2" type="button">About</button></a><br>
+        <a href="help.html"><button class="btn2" type="button">Help</button><br>-->
+
+           <button class="btn1" onclick="loadContent('profile.html')">Profile</button><br>
+          <button class="btn2" onclick="loadContent('information.html')">Information</button><br>
+          <button class="btn3" onclick="loadContent('help.html')">Help</button>
+
+
+      </div>
+
+    </div>
+    <script>
+    async function loadContent(page) {
+      try {
+          const response = await fetch(page);
+          const data = await response.text();
+          document.getElementById('main-content').innerHTML = data;
+      } catch (error) {
+          console.error('Error loading page:', error);
+          document.getElementById('main-content').innerHTML = '<p>Sorry, an error occurred while loading the content.</p>';
+      }
+  }
+   </script>
+</body>
+</html>
