@@ -1,84 +1,195 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
-    <link rel="stylesheet" href="chats.css">
+    <title>Chatting Application</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <style>
+        :root {
+            --primary-color: lightblue;
+            --secondary-color: lightpink;
+            --hover-color: #F0A3A3;
+            --popup-background: #fff;
+            --button-color: #6FD649;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            height: 100%;
+        }
+        nav.sidebar {
+            width: 10%;
+            background-color: var(--primary-color);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        nav.sidebar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        nav.sidebar button:hover {
+            background-color: var(--hover-color);
+            border-radius: 5px;
+        }
+        .main-content {
+            width: 90%;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            background-color: var(--secondary-color);
+        }
+        .int2 {
+            width: 160px;
+            height: 20px;
+        }
+        .logo {
+            margin-top: -20px;
+            margin-left: 30px;
+            color: black;
+        }
+        .popup {
+            width: 400px;
+            background: var(--popup-background);
+            border-radius: 6px;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            z-index: 1001; /* Make sure it's above everything else */
+        }
+        .open-popup {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .popup img {
+            width: 50px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgb(91, 120, 202);
+        }
+        .popup button {
+            width: 50%;
+            margin-top: 70px;
+            padding: 10px 0;
+            background: var(--button-color);
+            color: #fff;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.4s linear;
+            z-index: 1000; /* Just below the popup */
+        }
+        .backdrop.visible {
+            visibility: visible;
+            opacity: 1;
+        }
+        .sidebar button:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    </style>
 </head>
 <body>
-<!--<div class="sidebar">
-     <div class="icons1">
-    <i class="fa-solid fa-bars" id="btn"></i>
- <div class="icon1">
- <div class="icons">
- <a href="#">
-   <i class="fa-regular fa-circle"></i>
- </a>
- </div>
- <div class="icons">
- <a href="#">
-  <i class="fa-solid fa-gear"></i>
- </a>
- </div>
- <div class="icons">
-  <a href="#">
-    <i class="fa-solid fa-right-from-bracket"></i>
-  </a>
- </div>
-</div>
- <div class="content">
-  <h1>CHATS</h1>
- </div>
- </div>-->
-<div class="main-container">
-  <div class="chatting">
-    <div style="background-color:whitesmoke;width: 120px;height: 100vh;">
-      <div class="icons">
-        <a href="chatspage.html" class="chats">
-          <i class="fa-regular fa-message"></i>
-        </a>
+    <div class="container">
+        <nav class="sidebar">
+            <button id="chatBtn" onclick="loadContent('page.html')" aria-label="Chats">
+                <i class="fa-regular fa-message"></i>
+            </button>
+            <button id="settingsBtn" onclick="loadContent('settings.html')" aria-label="Settings">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+            <button id="logoutBtn" onclick="openPopup()" aria-label="Logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </button>
+        </nav>
+        <div class="main-content" id="main-content">
+            <div class="content">
+                <img src="images1.png" width="50" alt="Logo">
+            </div>
+            <div class="logo">
+                <h1>New Chat</h1>
+                <input class="int2" type="text" placeholder="Search"><br>
+                <div class="details">
+                    <h4 class="name">Ram</h4>
+                    <h4 class="name">Deva</h4>
+                </div>
+            </div>
         </div>
-        <div class="icons">
-        <a href="settings.html" class="setting">
-          <i class="fa-solid fa-gear"></i>
-         </a>
-        </div>
-        <div class="icons">
-         <a href="#">
-          <i class="fa-solid fa-right-from-bracket"></i>
-        </a>
     </div>
-
+    <div class="backdrop" id="backdrop"></div>
+    <div class="popup" id="popup">
+        <img src="tick1.png" alt="Confirmation Icon">
+        <h2>Logout Confirmation</h2>
+        <p>Are you sure you want to logout?</p>
+        <button type="button" onclick="logout()">OK</button>
     </div>
-  </div>
-
-  <div class="content">
-    <div class="logo">
-
-      <img src="images1.png" width="50px">  
-        
-    <h1> New Chat</h1><br>
-    </div>
-     <div class="details">
-      <div class="listhead">
-        <h4 class="name">Ram</h4>
-        &nbsp;&nbsp;
-        <h4 class="name">Deva</h4>
-        &nbsp;&nbsp;
-      </div>
-    </div>
-    </div>
-    
-   <div class="search-container">
-    <input type="text" placeholder="search">
-    <i class="fa-solid fa-magnifying-glass"></i>
-   </div> 
-   
-</div>
-    
- 
+    <script>
+        async function loadContent(page) {
+            if (popup.classList.contains("open-popup")) return; // Prevent loading if popup is open
+            try {
+                const response = await fetch(page);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.text();
+                document.getElementById('main-content').innerHTML = data;
+            } catch (error) {
+                console.error('Error loading page:', error);
+                document.getElementById('main-content').innerHTML = '<p>Sorry, an error occurred while loading the content.</p>';
+            }
+        }
+        const popup = document.getElementById("popup");
+        const backdrop = document.getElementById("backdrop");
+        const sidebarButtons = document.querySelectorAll('.sidebar button');
+        function openPopup() {
+            popup.classList.add("open-popup");
+            backdrop.classList.add("visible");
+            sidebarButtons.forEach(button => button.disabled = true); // Disable sidebar buttons
+        }
+        function closePopup() {
+            popup.classList.remove("open-popup");
+            backdrop.classList.remove("visible");
+            sidebarButtons.forEach(button => button.disabled = false); // Enable sidebar buttons
+        }
+        function logout() {
+            closePopup();
+            setTimeout(() => {
+                window.location.href = 'logpage.html';
+            }, 300);
+        }
+        backdrop.addEventListener('click', closePopup); // Close popup when backdrop is clicked
+    </script>
 </body>
 </html>
