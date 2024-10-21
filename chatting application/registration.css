@@ -1,0 +1,52 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAFjKt4nQbmmve2yLuD-F4D1xGu2fOjVCFFA&s");
+background-repeat: no-repeat;
+background-size: cover;
+}
+/*body{
+    /* position: absolute; */
+  /*  background-image: url("https://img.freepik.com/free-photo/green-light-green-blur-gradient-background_1258-83068.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}*/
+.main-container{
+    align-items: center;
+}
+.box-container{
+    border-radius: 10px;
+    display: flex;
+    width:500px;
+    height: 80vh;
+    margin: 70px 70px;
+     margin-left: 330px; 
+    backdrop-filter: blur(160px);
+}
+.logo{
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px; 
+}
+.form{
+    margin-left: 80px;
+    text-align: center;
+}
+.sign{
+    float: left;
+    width: 70px;
+    height: 20px;
+    cursor: pointer;
+}
+.login{
+    width: 70px;
+    height: 20px; 
+    cursor: pointer;
+}
+.register{
+    margin-top: 10px;
+
+}

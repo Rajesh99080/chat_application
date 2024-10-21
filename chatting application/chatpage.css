@@ -1,0 +1,62 @@
+/**{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+.chatting{
+     /*position: fixed; 
+    text-align: center;
+}
+.icons{
+    padding:10px 10px;
+    font-size: 40px;
+}
+.main-container{
+    display: flex;
+}
+.content{
+    font-size: large;
+    margin: 10px 10px;
+}
+.logo{
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px; 
+}
+.search-container{
+    width: 80%;
+}
+.search-container input{
+    border-radius: 10px;
+    font-size: medium;
+    text-align: center;
+    height: 25px;
+    cursor: pointer;
+}
+.search-container i{
+    right:-1%;
+    top:10%;
+    position: absolute;
+    cursor: pointer;
+}
+.btn{
+    cursor: pointer;
+}*/
+.sidebar-container{
+    width:10%;
+}
+.main-container{
+    display: flex;
+}
+.chat-container{
+    width:30%;
+}
+.message-container{
+    width:60%;
+}
+body{
+    display: flex;
+}
