@@ -16,15 +16,18 @@
     </div>
     
     <div class="form">
-        <h1>Registeration</h1><br>
-      <form class="register">
+      <h1>Registeration</h1><br>
+      <form id="registrationForm" class="register" onsubmit="return validateForm()">
+       <div class="form-group">
         <label for="FIRST_NAME">FIRST_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" placeholder="FIRST NAME" id="firstName" name="FIRST_NAME"required>
         </label><br><br>
+       </div>
         <div>
         <label for="LAST_NAME">LAST_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" placeholder="LAST NAME" id="lastNAME" name="LAST_NAME"required>
-        </label><br><br>
+        </label> 
+        <br><br>
         </div>
         <div>
         <label for="USER_NAME">USER_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -55,5 +58,73 @@
      <!---<a href="login.html">LOGIN</a>-->
   </div>
 </div>
+</div>
+<script>
+function validateForm() {
+  let valid = true;
+  document.querySelectorAll('.error-message').forEach((msg) => {
+      msg.textContent = '';
+  });
+  const firstName = document.getElementById('first-name').value.trim();
+  if (firstName === '') {
+      document.getElementById('first-name-error').textContent = 'First name is required';
+      valid = false;
+  }
+  const lastName = document.getElementById('last-name').value.trim();
+  if (lastName === '') {
+      document.getElementById('last-name-error').textContent = 'Last name is required';
+      valid = false;
+  }
+  const email = document.getElementById('email').value.trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      document.getElementById('email-error').textContent = 'Please enter a valid email';
+      valid = false;
+  }
+  const phone = document.getElementById('phone').value.trim();
+  if (!/^\d{10}$/.test(phone)) {
+      document.getElementById('phone-error').textContent = 'Please enter a valid 10-digit phone number';
+      valid = false;
+  }
+  const gender = document.getElementById('gender').value;
+  if (gender === '') {
+      document.getElementById('gender-error').textContent = 'Please select your gender';
+      valid = false;
+  }
+  const dob = document.getElementById('dob').value;
+  if (dob === '') {
+      document.getElementById('dob-error').textContent = 'Please enter your date of birth';
+      valid = false;
+  }
+  const address = document.getElementById('address').value.trim();
+  if (address === '') {
+      document.getElementById('address-error').textContent = 'Address is required';
+      valid = false;
+  }
+  const username = document.getElementById('username').value.trim();
+  if (username === '') {
+      document.getElementById('username-error').textContent = 'username name is required';
+      valid = false;
+  }
+  const password = document.getElementById('password').value;
+  if (password.length < 6) {
+      document.getElementById('password-error').textContent = 'Password must be at least 6 characters';
+      valid = false;
+  }
+  const confirmPassword = document.getElementById('confirm-password').value;
+  if (password !== confirmPassword) {
+      document.getElementById('confirm-password-error').textContent = 'Passwords do not match';
+      valid = false;
+  }
+  if (valid) {
+      alert("Registration successful!");
+      setTimeout(function () {
+          window.location.href = "studentloginpage.html";
+      }, 1500);
+  }
+  return false;
+}
+</script>
+
+
 </body>
 </html>
