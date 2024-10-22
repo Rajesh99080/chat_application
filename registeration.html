@@ -12,48 +12,63 @@
     
     <div class="logo">
 
-  <img src="images1.png" width="50px">  
+  <img src="images1.png" width="60px">  
     </div>
     
     <div class="form">
-        <h1>Registeration</h1><br>
-      <form class="register">
-        <label for="FIRST_NAME">FIRST_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" placeholder="FIRST NAME" id="firstName" name="FIRST_NAME"required>
-        </label><br><br>
+      <h1>Registeration</h1><br>
+      <form id="registrationForm" class="register" onsubmit="return validateForm()">
+       <div class="form-group">
+        <label for="FIRST_NAME">FIRST_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" placeholder="FIRST NAME" id="firstName" class="inp" name="FIRST_NAME"required>
+        <span class="error-message" id="firstName-error"></span>
+
+        <br><br>
+       </div>
         <div>
-        <label for="LAST_NAME">LAST_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" placeholder="LAST NAME" id="lastNAME" name="LAST_NAME"required>
-        </label><br><br>
+        <label for="LAST_NAME">LAST_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" placeholder="LAST NAME" id="lastNAME" class="inp" name="LAST_NAME"required>
+        <span class="error-message" id="lastNAME-error"></span>
+
+         
+        <br><br>
         </div>
         <div>
-        <label for="USER_NAME">USER_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" placeholder="USER NAME" id="userNAME" name="USER_NAME" required>
-        </label><br><br>
+        <label for="USER_NAME">USER_NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" placeholder="USER NAME" id="userNAME" class="inp" name="USER_NAME" required>
+        <span class="error-message" id="userNAME-error"></span>
+        <br><br>
       </div>
       <div>
-        <label for="EMAIL_ID">EMAIL_ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="email" placeholder="EMAIL" id="email" name="EMAIL_ID" required>
-        </label><br><br>
+        <label for="EMAIL_ID">EMAIL_ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="email" placeholder="EMAIL" id="email" class="inp" name="EMAIL_ID" required>
+        <span class="error-message" id="email-error"></span>
+        <br><br>
       </div>
       <div>
-         <label for="PASSWORD">PASSWORD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           <input type="password" placeholder="PASSWORD" id="Password" name="PASSWORD" required>
-        </label><br><br>
+         <label for="PASSWORD">PASSWORD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+           <input type="password" placeholder="PASSWORD" id="Password" class="inp" name="PASSWORD" required>
+           <span class="error-message" id="Password-error"></span>
+        <br><br>
       </div>
       <div>
-        <label for="CONFIRM_PASSWORD">CONFIRM_PASSWORD&nbsp;&nbsp;
-        <input type="password" placeholder="CONFIRM_PASSWORD" id="confirmPassword" name="CONFIRM_PASSWORD" required>
-        </label>
+        <label for="CONFIRM_PASSWORD">CONFIRM_PASSWORD&nbsp;&nbsp;</label>
+        <input type="password" placeholder="CONFIRM_PASSWORD" id="confirmPassword" class="inp" name="CONFIRM_PASSWORD" required>
+        <span class="error-message" id="confirmPassword-error"></span>
+
+        
       </div><br>
       
     <div>
    <button class="sign" type="submit">SIGN UP</button>
     </div>
       </form>
-      <a href="login.html">already register?</a>
+      <a href="logpage.html">already register?</a>
      <!---<a href="login.html">LOGIN</a>-->
   </div>
 </div>
+</div>
+<script src="register.js"></script>
+
 </body>
 </html>
