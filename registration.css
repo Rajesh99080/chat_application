@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 body{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAFjKt4nQbmmve2yLuD-F4D1xGu2fOjVCFFA&s");
+background-repeat: no-repeat;
+background-size: cover;
+}
+/*body{
     /* position: absolute; */
   /*  background-image: url("https://img.freepik.com/free-photo/green-light-green-blur-gradient-background_1258-83068.jpg");
     background-repeat: no-repeat;
@@ -13,13 +18,13 @@ body{
     align-items: center;
 }
 .box-container{
-    display: flex;
-    /* background-color: lightgrey; */
-    width:500px;
+    border-radius: 10px;
+    display: block;
+    width:600px;
     height: 80vh;
-    margin: 70px 70px;
-    margin-left: 330px;
-    /*backdrop-filter: blur(160px);*/
+    margin: 50px auto;
+     /* margin-left: 20px;  */
+    backdrop-filter: blur(160px);
 }
 .logo{
     justify-content: center;
@@ -32,9 +37,19 @@ body{
 }
 .sign{
     float: left;
-    width: 70px;
+    width: 80px;
     height: 20px;
     cursor: pointer;
+    margin-left: 107px;
+    border: none;
+    border-radius: 10px;
+    background-color: lightblue;
+}
+.inp{
+    text-align: center;
+    border:none;
+    border-radius: 10px;
+    height:20px;
 }
 .login{
     width: 70px;
