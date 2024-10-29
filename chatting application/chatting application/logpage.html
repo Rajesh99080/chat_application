@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="logpage.js"> -->
     <style>
  body{
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAFjKt4nQbmmve2yLuD-F4D1xGu2fOjVCFFA&s");
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
-
 }
 
 .box-container{
@@ -22,7 +19,6 @@
     text-align: center;
     left:530px;
     backdrop-filter: blur(160px);
-    border-radius: 10px;
 }
 .logo{
     justify-content: center;
@@ -37,33 +33,21 @@
     text-align: center;
 }
 .submit{
-    width:90px;
-    height:25px;
+    width:70px;
+    height:20px;
     cursor: pointer;
-    border-radius: 10px;
-    border:none;
-    background-color: lightblue;
+
 }
 .for{
     text-align: center;
 }
 .clear{
-    width:90px;
-    height:25px;
+    width:70px;
+    height:20px;
     cursor: pointer;
-    border:none;
-    border-radius: 10px;
-    background-color:lightblue;
 }
-.remember{
-    margin-bottom: 8px;
-}
-.int{
-    border: none;
-    height: 20px;
-    text-align: center;
-    border-radius: 10px;
-}
+
+
     </style>
 </head>
 <body>
@@ -77,19 +61,16 @@
                 <h1 class="head">LOGIN</h1><br>
                 <form>
                     <div>
-                    <label>USER_NAME&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input class="int" type="text" placeholder="USERNAME" id="Username" name="USER_NAME" required>
+        <label>USER_NAME&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" placeholder="USERNAME" id="Username" name="USER_NAME" required>
                     </label><br><br>
                     </div>
                     <div>
                     <label>PASSWORD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input class="int" type="password" placeholder="PASSWORD" id="Password" name="PASSWORD" required>
+                    <input type="password" placeholder="PASSWORD" id="Password" name="PASSWORD" required>
                     </label></div><br>
-                    <div class="remember">
-                        <label><input type="checkbox" name="">Remember me</label>
-                    </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="chats.html"><button class="submit" type="button">LOGIN</button></a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="clear" type="clear">CLEAR</button></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="clear" type="clear">clear</button></a>
     
                <!---- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="registeration form.html"><button class="submit" type="button">Register</button></a>-->
                 </form><br>
@@ -102,9 +83,5 @@
         </div>
       </div>  
     </center>
-
-    <script src="logpage.js">
-
-    </script>
 </body>
 </html>

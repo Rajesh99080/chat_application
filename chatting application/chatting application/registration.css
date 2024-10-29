@@ -19,11 +19,11 @@ background-size: cover;
 }
 .box-container{
     border-radius: 10px;
-    display: block;
-    width:600px;
+    display: flex;
+    width:500px;
     height: 80vh;
-    margin: 50px auto;
-     /* margin-left: 20px;  */
+    margin: 70px 70px;
+     margin-left: 330px; 
     backdrop-filter: blur(160px);
 }
 .logo{
@@ -37,19 +37,9 @@ background-size: cover;
 }
 .sign{
     float: left;
-    width: 80px;
+    width: 70px;
     height: 20px;
     cursor: pointer;
-    margin-left: 107px;
-    border: none;
-    border-radius: 10px;
-    background-color: lightblue;
-}
-.inp{
-    text-align: center;
-    border:none;
-    border-radius: 10px;
-    height:20px;
 }
 .login{
     width: 70px;
