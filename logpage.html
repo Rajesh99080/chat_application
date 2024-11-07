@@ -83,7 +83,7 @@
                     </div>
                     <div>
                     <label>PASSWORD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input class="int" type="password" placeholder="PASSWORD" id="Password" name="PASSWORD" required>
+                    <input class="int" type="password" placeholder="PASSWORD" minlength="8" required id="Password" name="PASSWORD" required>
                     </label></div><br>
                     <div class="remember">
                         <label><input type="checkbox" name="">Remember me</label>
@@ -103,8 +103,18 @@
       </div>  
     </center>
 
-    <script src="logpage.js">
+    <script>
+     function validation(){
+        const password = document.getElementById("Password").value;
 
-    </script>
+        if(password.length < 8){
+            alert("Password must be at least 8 characters.");
+            return false;
+        }
+     return true;//Allow form submission
+    }
+
+     </script>
+     
 </body>
 </html>
